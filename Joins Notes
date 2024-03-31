@@ -1,0 +1,42 @@
+import pandas as pd
+
+# Sample DataFrames
+employees_df = pd.DataFrame({
+    'employee_id': [1, 2, 3],
+    'employee_name': ['John', 'Alice', 'Bob'],
+    'department_id': [1, 2, 1]
+})
+
+departments_df = pd.DataFrame({
+    'department_id': [1, 2],
+    'department_name': ['HR', 'Finance']
+})
+
+# Inner Join
+inner_join_df = pd.merge(employees_df, departments_df, on='department_id', how='inner')
+
+# Left Join
+left_join_df = pd.merge(employees_df, departments_df, on='department_id', how='left')
+
+# Right Join
+right_join_df = pd.merge(employees_df, departments_df, on='department_id', how='right')
+
+# Full Outer Join
+full_outer_join_df = pd.merge(employees_df, departments_df, on='department_id', how='outer', suffixes=('_employees', '_departments'))
+
+# Cross Join (Cartesian Product)
+employees_df['key'] = 1
+departments_df['key'] = 1
+cross_join_df = pd.merge(employees_df, departments_df, on='key').drop(columns='key')
+
+# Displaying results
+print("Inner Join:")
+print(inner_join_df)
+print("\nLeft Join:")
+print(left_join_df)
+print("\nRight Join:")
+print(right_join_df)
+print("\nFull Outer Join:")
+print(full_outer_join_df)
+print("\nCross Join:")
+print(cross_join_df)
