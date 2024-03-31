@@ -1,0 +1,36 @@
+
+candy_purchased = 0
+while(candy_purchased < 6):
+    print('Candy purchased:', candy_purchased)
+    candy_purchased = candy_purchased +1
+
+#Task 2
+candy_purchased = 0
+while(candy_purchased <= 100):
+    print('candy_purchased',candy_purchased)
+    candy_purchased = (candy_purchased+1 * 10)
+
+#webpage timer
+from time import sleep
+
+n = 3
+while n > 0:
+    print(n)
+    sleep(1)    # Execution pauses for 1 second
+    n = n - 1   # Decrement n by 1
+
+from time import sleep
+mins =10
+while(mins>0):
+    sleep(1) 
+    print(mins)
+    mins=mins-1
+    if(mins == 5):
+        print('Place your reservation soon! 5 minutes remaining.')
+        mins=mins-1
+    if(mins==2):
+        print('Dont lose your seats! 2 minutes remaining.')
+        mins=mins-1
+
+print('User timed out')
+
